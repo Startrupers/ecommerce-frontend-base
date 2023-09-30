@@ -1,8 +1,8 @@
 import { ReactElement } from "react";
 import Link from "next/link";
-import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { SvgIcon, Icon, Box } from "@mui/material";
+import { BsPerson } from "react-icons/bs";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import "./Navbar.css";
 
 export const Navbar = (): ReactElement => {
@@ -29,12 +29,12 @@ export const Navbar = (): ReactElement => {
       <Box className="icons">
         <Link href="/">
           <SvgIcon>
-            <PersonOutlinedIcon className="profile-icon" />
+            <BsPerson />
           </SvgIcon>
         </Link>
         <Link href="/">
-          <Icon fontSize="large">
-            <ShoppingCartOutlinedIcon className="cart-icon" />
+          <Icon fontSize="medium">
+            <AiOutlineShoppingCart />
           </Icon>
         </Link>
       </Box>
