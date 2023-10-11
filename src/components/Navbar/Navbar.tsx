@@ -1,9 +1,9 @@
+import "./Navbar.css";
 import { ReactElement } from "react";
 import Link from "next/link";
 import { SvgIcon, Icon, Box } from "@mui/material";
 import { BsPerson } from "react-icons/bs";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import "./Navbar.css";
 
 export const Navbar = (): ReactElement => {
   return (
@@ -15,7 +15,10 @@ export const Navbar = (): ReactElement => {
       <Box className="links">
         <ul>
           <li>
-            <Link href="/discovery">Discovery</Link>
+            <Link href="/products-client">Products/Client</Link>
+          </li>
+          <li>
+            <Link href="/products-server">Products/Server</Link>
           </li>
           <li>
             <Link href="/about">About</Link>
