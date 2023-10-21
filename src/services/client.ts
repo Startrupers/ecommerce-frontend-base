@@ -1,7 +1,7 @@
 import coreClient, { ClientAxiosInstance } from "./config";
 
 const client: ClientAxiosInstance = {
-  get: (url, conf) => coreClient().get(url, conf),
+  get: (url, config) => coreClient().get(url, config),
   post: (url, data, config) => coreClient().post(url, data, config),
   put: (url, data, config) => coreClient().put(url, data, config),
   delete: (url, config) => coreClient().delete(url, config),

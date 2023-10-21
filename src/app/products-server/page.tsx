@@ -1,11 +1,9 @@
-import { baseURL } from "@/services/urls";
-import { getDataFromServer } from "@/utils/getDataFromServer";
+import client from "@/services/client";
+
 import Image from "next/image";
 
 const Products = async () => {
-  const data = await getDataFromServer({
-    url: `${baseURL}/products`,
-  });
+  const data = await client.get("/products");
   console.log("🚀 ~ products-server ~ Products ~ data:", data);
 
   return (
