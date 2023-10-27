@@ -41,7 +41,7 @@ export default function Products() {
       <ul>
         {data?.map((product: ProductData) => (
           <li key={product.id}>
-            <h2>{product.title}</h2>
+            <h2>{product.id + '.- ' + product.title}</h2>
             <Image
               src={product.image}
               alt={product.title}

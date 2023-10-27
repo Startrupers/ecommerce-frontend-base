@@ -12,7 +12,7 @@ const Products = async () => {
       <ul>
         {data.map((product: any) => (
           <li key={product.id}>
-            <h2>{product.title}</h2>
+            <h2>{product.id + '.- ' + product.title}</h2>
             <Image
               src={product.image}
               alt={product.title}
