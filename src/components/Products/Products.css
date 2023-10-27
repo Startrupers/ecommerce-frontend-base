@@ -1,0 +1,23 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+  margin: 1rem;
+  padding: 8rem;
+  
+}
+
+.card-item {
+  color: black;
+  background-color: #FFF;
+  padding: 1rem;
+  margin: auto;
+  margin-bottom: 2rem;
+  width: 210px;
+  height: 220px;
+  border-radius: 10px;
+}
+
+
+
+

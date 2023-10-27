@@ -1,6 +1,7 @@
 import "./page.css";
 import { Box, Typography } from "@mui/material";
-import Products from "./products-server/page";
+import Products from "@/components/Products/Products";
+
 
 export default function Home() {
   return (
@@ -17,8 +18,12 @@ export default function Home() {
             </Typography>
           </Box>
         </Box>
+        <Typography className="title-products">Products</Typography>
+        <Typography className="text-products">
+          Order it for you or for your beloved ones
+        </Typography>
+        <Products />
       </main>
-      <Products />
     </>
   );
 }
