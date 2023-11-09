@@ -1,7 +1,7 @@
 .home {
-  height: 750px;
+  contain-intrinsic-height: 750px;
   background: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHCg0HBgYGBgcHDQoPBgYGBg8ICRANFBEWFhQRExUYHCggGBolGxMTITEhJSkrLi4uFx8zODMsNygtLisBCgoKDQ0NFw0NDisZFRkrLSsrKysrKysrKysrLS0rKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAHcBpwMBIgACEQEDEQH/xAAXAAEBAQEAAAAAAAAAAAAAAAAAAQUG/8QAFRABAQAAAAAAAAAAAAAAAAAAAAH/xAAYAQEBAQEBAAAAAAAAAAAAAAACAwcGBf/EABURAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIRAxEAPwDuwHLx61EVCidADidEVDidEVDgUAKJ1ADidADidQAonRFQ4nSotQwoAcTogFEqJVSnE6AHE6gBxOoAUTqFCnE6VFqHE6gBRKiKhxOoAcTqAHEqiKhxKiKhROolVKcSqAGm1wGcRtdAQonQA4nRFQ4nRFQ4FACidQA4nQA4nUAKJ0RUOJ0qLUMKAHE6IqFEqJVSnE6AHE6gBxOoAUTqFCnE6VFqHE6gBRKiKhxOoAcTqAHEqiKhxKiKhROolVDiVQA02uAziNroioUToAcToiocToiocCgBROoAcToAcTqAFE6IqHE6VFqGFADidEAolRKqU4nQA4nUAOJ1ACidQoU4nSotQ4nUAKJURUOJ1ADidQA4lURUOJURUKJ1EqpTiVQA02uAziNroioUToAcToiocToiocCgBROoAcToAcTqAFE6IqHE6VFqHAoAcTqAFEqJVSnE6AHE6gBxOoAUTqFCnE6VFqHE6gBRKiKhxOoAcTqAHEqiKhxKiKhROoipTiVQA02uAziNroCFE6AHE6IqHE6IqHAoAUTqAHE6AHE6gBROiKhxOlRahwKAHE6IqFEqJVSnE6AHE6gBxOoAUTqFCnE6VFqHE6gBRKiKhxOoAcTqAHEqiKhxKiKhROoipTiVQA02uAziNroihROoAcToiocToiocCgBROoAcToAcTqAFE6IqHE6VFqGFADidQVCiVEqpTidADidQA4nUAKJ1ChTidKi1DidQAolRFQ4nUAOJ1ADiVRFQ4lRFQonURUpxKoAabXAZxG10RUKJ0AOJ0RUOJ0RUOBQAonUAOJ0AOJ1ACidEVDidKi1DCgBxOiAUSolVKcToAcTqAHE6gBROoUKcTpUWocTqAFEqIqHE6gBxOoAcSqIqHEqIqFE6iVUpxKoAabXAZxG10RQonUAOJ0QDidEA4FACidQA4nQQOJ0AKJ0QDidKgGFADidQAolRKocTqAHE6gBxOoAUTqFA4nSoBxOoAUSogHE6gBxOoAcSqIBxKiAUTqJQOJVADTf/2Q==),
-    lightgray 50% / cover fixed;
+    lightgrey 50% / cover fixed;
 }
 
 .img-card {
@@ -9,10 +9,11 @@
 }
 
 .card {
-  background-color: rgba(247, 248, 250, 0.8);
+  background-color:  #00000080;
   width: 730px;
   height: 349px;
   margin: auto;
+  margin-bottom: 226px;
 }
 
 .title {
@@ -33,13 +34,8 @@
   margin: 0 auto;
 }
 
-.home-products {
-  height: 950px;
-}
-
 .title-products {
-  padding-top: 316px;
-  justify-content: center;
+  padding-top: 100px;
   text-align: center;
   font-size: 40px;
   font-style: normal;
@@ -51,5 +47,9 @@
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  margin: 0 auto;
 }
+
+.home-products-section {
+  height: 940px;
+  background-color: black; 
+} 

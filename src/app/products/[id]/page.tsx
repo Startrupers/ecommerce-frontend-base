@@ -1,36 +1,51 @@
 import Image from "next/image";
 import "./page.css";
 import client from "@/services/client";
-
+import { Box, Typography } from "@mui/material";
+import { Counter } from "@/components";
 
 async function getProducts(id: string) {
-    const product = await client.get(`/products/${id}`)
-    return product;
+  const product = await client.get(`/products/${id}`);
+  return product;
 }
 
 interface ProductPageProps {
-    params: {
-        id: string;
-    }
+  params: {
+    id: string;
+  };
 }
 
 async function ProductPage({ params }: ProductPageProps) {
-    const product = await getProducts(params.id);
+  const product = await getProducts(params.id);
 
-    return (
-        <div className="card-product">
-            <Image
-                src={product.image}
-                alt={product.title}
-                width={100}
-                height={100}
+  return (
+    <Box className="container">
+      <div className="product-card-detail">
+        <Image
+          className="img-card-detail"
+          src={product.image}
+          alt={product.title}
+          width={200}
+          height={200}
+        />
+      </div>
 
-            />
-            <h5>{product.title}</h5>
-            <p style={{ color: "green" }}>{"$" + product.price}</p>
-        </div>
-    );
+      <Box>
+        <Typography className="title-card-detail">{product.title}</Typography>
+        <Typography className="price-card-detail">
+          {"$" + product.price}
+        </Typography>
+        <Counter />
+      </Box>
 
+      <Box className="description">
+        <Typography>
+          All hand-made with natural soy wax, Candleaf is made for your pleasure
+          moments. </Typography>
+          <Typography className="shipping">🍕 FREE SHIPPING</Typography>
+      </Box>
+    </Box>
+  );
 }
 
 export default ProductPage;

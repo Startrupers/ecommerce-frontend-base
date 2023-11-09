@@ -1,23 +1,42 @@
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 1rem;
-  margin: 1rem;
-  padding: 8rem;
-  
+  grid-template-columns: repeat(4, 0.5fr);
+  padding: 6rem;
+  grid-gap: 6rem;
+  justify-items: center;
 }
 
-.card-item {
-  color: black;
-  background-color: #FFF;
+.home-product-card {
+  list-style: none;
+  background-color: #fff;
   padding: 1rem;
-  margin: auto;
-  margin-bottom: 2rem;
-  width: 210px;
-  height: 220px;
-  border-radius: 10px;
+  width: 220px;
+  height: 235px;
+  font-size: 1em;
+  text-shadow: 0.5px 0.5px 0px gold, 1px 1px 0px darkslateblue;
+  color: darkslateblue;
+  box-shadow: 0px 0px 15px 8px darkslateblue;
+  border-radius: 25px;
 }
 
+.align-img {
+  display: flex;
+  margin: auto;
+  margin-bottom: 0.5em;
+}
+
+.title-card {
+  width: 178px;
+  height: 70px;
+}
+
+.price-card {
+  padding-top: 0.5em;
+  padding-right: 0.5em;
+  text-align: end;
+  text-shadow: 1px 1px 0px gold, 2px 2px 0px darkslateblue;
+  color: darkslateblue;
+}
 
 
 

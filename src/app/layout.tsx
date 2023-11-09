@@ -2,8 +2,8 @@ import "src/styles/globals.css";
 import type { Metadata } from "next";
 import { Roboto_Mono } from "next/font/google";
 import { Footer, Navbar } from "@/components";
-import Products from "./products-client/page";
-import { HomePage } from "./page";
+// import Products from "./products-client/page";
+// import { HomePage } from "./page";
 import "./page.css"
 
 
@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className={roboto_mono.className}>
         <Navbar />
         {children}
-        <div className="home-products" />
+        {/* <div className="home-products" /> */}
         <Footer />
       </body>
     </html>
