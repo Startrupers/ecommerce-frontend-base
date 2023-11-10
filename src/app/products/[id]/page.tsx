@@ -1,13 +1,8 @@
-import Image from "next/image";
 import "./page.css";
+import Image from "next/image";
 import client from "@/services/client";
 import { Box, Typography, Button } from "@mui/material";
 import { Counter } from "@/components";
-
-async function getProducts(id: string) {
-  const product = await client.get(`/products/${id}`);
-  return product;
-}
 
 interface ProductPageProps {
   params: {
@@ -16,7 +11,8 @@ interface ProductPageProps {
 }
 
 async function ProductPage({ params }: ProductPageProps) {
-  const product = await getProducts(params.id);
+  const { id } = params;
+  const product = await client.get(`/products/${id}`);
 
   return (
     <Box className="container">

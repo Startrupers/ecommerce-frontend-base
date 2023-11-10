@@ -1,39 +1,52 @@
 "use client";
 
-import { baseURL } from "@/services/urls";
-import { useApiCall } from "@/hooks";
-import Image from "next/image";
 import "./Products.css";
+import { ReactElement, useCallback, useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { ReactElement } from "react";
+import client from "@/services/client";
+import { PRODUCTS } from "@/services/routes";
 
-interface ProductData {
+interface Product {
+  id: string;
   title: string;
   image: string;
   price: number;
 }
 
 export const Products = (): ReactElement => {
-  const { data } = useApiCall(`${baseURL}/products?limit=8`);
+  const [data, setData] = useState<Product[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string>("");
+
+  const getProducts = useCallback(async () => {
+    setLoading(true);
+    try {
+      const response = await client.get(`${PRODUCTS}?limit=8`);
+      setData(response);
+      setLoading(false);
+    } catch (error: any) {
+      setError(error.message);
+      setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    getProducts();
+  }, [getProducts]);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>{error ?? "Error..."}</p>;
 
   return (
-    <ul className="grid">
-      {(data as ProductData[])?.map((product: ProductData) => (
-        <Link href={`/products/${product.id}`} key={product.id}>
-          <li className="home-product-card">
-            <div>
-              <Image className="align-img"
-                src={product.image}
-                alt={product.title}
-                width={100}
-                height={100}
-              />
-              <h5 className="title-card"> {product.title}</h5>
-              <p className="price-card">{"$" + product.price}</p>
-            </div>
-          </li>
+    <section className="products-list__container">
+      {data?.map(({ id, title, image, price }: Product) => (
+        <Link className="product-card" href={`${PRODUCTS}/${id}`} key={id}>
+          <Image src={image} alt={title} width={100} height={100} />
+          <h5 className="product-title">{title}</h5>
+          <p className="product-price">${price}</p>
         </Link>
       ))}
-    </ul>
+    </section>
   );
-}
+};

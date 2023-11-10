@@ -2,9 +2,6 @@ import "src/styles/globals.css";
 import type { Metadata } from "next";
 import { Roboto_Mono } from "next/font/google";
 import { Footer, Navbar } from "@/components";
-// import Products from "./products-client/page";
-// import { HomePage } from "./page";
-import "./page.css"
 
 
 const roboto_mono = Roboto_Mono({
