@@ -1,7 +1,7 @@
 import Image from "next/image";
 import "./page.css";
 import client from "@/services/client";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
 import { Counter } from "@/components";
 
 async function getProducts(id: string) {
@@ -41,8 +41,15 @@ async function ProductPage({ params }: ProductPageProps) {
       <Box className="description">
         <Typography>
           All hand-made with natural soy wax, Candleaf is made for your pleasure
-          moments. </Typography>
-          <Typography className="shipping">🍕 FREE SHIPPING</Typography>
+          moments.
+        </Typography>
+        <Typography className="shipping">🍕 FREE SHIPPING</Typography>
+      </Box>
+
+      <Button className="button-add-cart">🛒 +Add to cart</Button>
+
+      <Box className="container-specification">
+        <Typography className="specification">{product.description}</Typography>
       </Box>
     </Box>
   );

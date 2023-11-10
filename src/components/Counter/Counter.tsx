@@ -25,10 +25,10 @@ export const Counter = ({ initialValue = 1 }: CounterProps) => {
       <Typography variant="h5" component="span" className="quantity">
         Quantity: {count}
       </Typography>
-      <Button variant="contained" onClick={handleDecrement} className="increment">
+      <Button variant="contained" onClick={handleDecrement} className="decrement">
         -
       </Button>
-      <Button variant="contained" onClick={handleIncrement} className="decrement">
+      <Button variant="contained" onClick={handleIncrement} className="increment">
         +
       </Button>
     </div>
