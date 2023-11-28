@@ -3,51 +3,63 @@ import Image from "next/image";
 import client from "@/services/client";
 import { Box, Typography, Button } from "@mui/material";
 import { Counter } from "@/components";
+import { PRODUCTS } from "@/services/routes";
 
 interface ProductPageProps {
   params: {
     id: string;
+    title: string;
+    image: string;
+    price: number;
+    description: string;
   };
 }
 
 async function ProductPage({ params }: ProductPageProps) {
   const { id } = params;
-  const product = await client.get(`/products/${id}`);
-
+  const product = await client.get(`${PRODUCTS}/${id}`);
+  
   return (
-    <Box className="container">
-      <div className="product-card-detail">
+    <div className="container-detail">
+      <section>
         <Image
-          className="img-card-detail"
+          className="product-img-detail" key={id}
           src={product.image}
           alt={product.title}
-          width={200}
-          height={200}
+          width={90}
+          height={90}
         />
-      </div>
 
-      <Box>
-        <Typography className="title-card-detail">{product.title}</Typography>
-        <Typography className="price-card-detail">
-          {"$" + product.price}
-        </Typography>
-        <Counter />
-      </Box>
+        <Box className="quote">
+          <Typography >
+            All hand-made with natural soy wax, Candleaf is made for your
+            pleasure moments.
+          </Typography>
+          <Typography className="shipping">🍕 FREE SHIPPING</Typography>
+        </Box>
+      </section>
+       
+      <section>
+        <Box>
+          <Typography className="title-detail">{product.title}</Typography>
+          <Typography className="price-detail">
+            ${product.price}
+          </Typography>
+          
+          <Counter />
 
-      <Box className="description">
-        <Typography>
-          All hand-made with natural soy wax, Candleaf is made for your pleasure
-          moments.
-        </Typography>
-        <Typography className="shipping">🍕 FREE SHIPPING</Typography>
-      </Box>
+          <section className="container-button-add-cart">
+          <Button className="button-add-cart">🛒 +Add to cart</Button>
+          </section>
 
-      <Button className="button-add-cart">🛒 +Add to cart</Button>
-
-      <Box className="container-specification">
-        <Typography className="specification">{product.description}</Typography>
-      </Box>
-    </Box>
+          <Box >
+            <Typography className="detail">
+              {product.description}
+            </Typography>
+          </Box>
+        </Box>
+      </section>
+    </div>
   );
 }
 

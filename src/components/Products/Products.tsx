@@ -12,11 +12,12 @@ interface Product {
   title: string;
   image: string;
   price: number;
+  description: string;
 }
 
 export const Products = (): ReactElement => {
   const [data, setData] = useState<Product[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true); 
   const [error, setError] = useState<string>("");
 
   const getProducts = useCallback(async () => {
@@ -35,7 +36,7 @@ export const Products = (): ReactElement => {
     getProducts();
   }, [getProducts]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p className="loading">Loading...</p>;
   if (error) return <p>{error ?? "Error..."}</p>;
 
   return (

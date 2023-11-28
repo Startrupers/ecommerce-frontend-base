@@ -29,7 +29,7 @@ export const Navbar = (): ReactElement => {
             <BsPerson />
           </SvgIcon>
         </Link>
-        <Link href="/">
+        <Link href="/cart">
           <Icon fontSize="medium">
             <AiOutlineShoppingCart />
           </Icon>
