@@ -1,0 +1,27 @@
+.quantity {
+  font-size: large;
+  display: block;
+  padding-top: 2rem;
+}
+
+.increment {
+  background-color: darkslateblue;
+  margin-left: 0.5rem;
+  min-width: 50px;
+  height: 13px;
+}
+
+.decrement {
+  background-color: darkslateblue;
+  min-width: 50px;
+  height: 13px;
+  font-size: 1.3rem;
+}
+
+.increment:hover {
+  background-color: black;
+}
+
+.decrement:hover {
+  background-color: black;
+}

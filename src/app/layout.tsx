@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Roboto_Mono } from "next/font/google";
 import { Footer, Navbar } from "@/components";
 
+
 const roboto_mono = Roboto_Mono({
   weight: "400",
   subsets: ["latin"],

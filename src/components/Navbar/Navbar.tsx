@@ -15,12 +15,6 @@ export const Navbar = (): ReactElement => {
       <Box className="links">
         <ul>
           <li>
-            <Link href="/products-client">Products/Client</Link>
-          </li>
-          <li>
-            <Link href="/products-server">Products/Server</Link>
-          </li>
-          <li>
             <Link href="/about">About</Link>
           </li>
           <li>
@@ -35,7 +29,7 @@ export const Navbar = (): ReactElement => {
             <BsPerson />
           </SvgIcon>
         </Link>
-        <Link href="/">
+        <Link href="/cart">
           <Icon fontSize="medium">
             <AiOutlineShoppingCart />
           </Icon>
