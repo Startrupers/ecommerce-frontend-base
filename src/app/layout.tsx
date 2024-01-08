@@ -2,7 +2,7 @@ import "src/styles/globals.css";
 import type { Metadata } from "next";
 import { Roboto_Mono } from "next/font/google";
 import { Footer, Navbar } from "@/components";
-
+import { StoreProvider } from "@/store/StoreProvider";
 
 const roboto_mono = Roboto_Mono({
   weight: "400",
@@ -22,9 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto_mono.className}>
-        <Navbar />
-        {children}
-        <Footer />
+        <StoreProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </StoreProvider>
       </body>
     </html>
   );

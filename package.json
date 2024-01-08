@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.11.0",
     "@faker-js/faker": "^8.2.0",
     "@mui/material": "^5.14.9",
+    "@reduxjs/toolkit": "^2.0.1",
     "@types/node": "20.6.0",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
@@ -23,6 +24,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.11.0",
-    "typescript": "5.2.2"
+    "react-redux": "^9.0.4",
+    "typescript": "5.2.2",
+    "zod": "^3.22.4"
   }
 }
