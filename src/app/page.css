@@ -34,7 +34,6 @@
 }
 
 .title-products {
-  padding-top: 100px;
   text-align: center;
   font-size: 40px;
   font-style: normal;
@@ -49,6 +48,135 @@
 }
 
 .home-products-section {
-  height: 940px;
-  background-color: black;
+  padding: 110px 100px 70px;
+  background-color: black; 
+} 
+
+.products-detail-section {
+  background-color: #00100f;
+  padding: 50px 20px 90px;
+
 }
+
+.content-detail-section {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.title-products-detail {
+  padding-top: 90px;
+  text-align: left;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.text-products-detail {
+  text-align: left;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  color:  #56b280;
+}
+
+.p-products-detail {
+  padding-top: 38px;
+  text-align: left;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+}
+
+.btn-products-detail{
+  margin-top: 68px;
+  padding: 0 30px 0 30px;
+  text-align: left;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  background-color: #56b280;
+  border-radius: 5px;
+  color: white;
+  text-transform: none;
+}
+
+.img-products-detail {
+border-radius: 49%;
+} 
+
+.testimonials-section {
+  background-color: black;
+  padding: 50px 100px 110px;
+}
+
+.title-testimonials {
+  padding-top: 30px;
+  text-align: center;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.text-testimonials {
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col {
+  flex: 33.33%;
+  max-width: 33.33%;
+  box-sizing: border-box;
+  padding: 15px;
+  text-align: center;
+}
+
+.testimonials-card{
+  background-color: #fff;
+  padding: 35px 70px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px 8px darkslateblue;
+
+}
+
+.testimonial-img {
+  border-radius: 50%;
+}
+
+.testimonial {
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  color: #56b280;
+}
+
+.autor {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  color: #7C8087;
+
+}
+
+.stars {
+  padding-bottom: 20px;
+}
+
+.popular-section {
+  background-color: #00100f;
+  padding: 50px 60px;
+}
+

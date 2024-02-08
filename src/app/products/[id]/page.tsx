@@ -4,6 +4,7 @@ import client from "@/services/client";
 import { Box, Typography, Button } from "@mui/material";
 import { Counter } from "@/components";
 import { PRODUCTS } from "@/services/routes";
+import { AddToCartButton } from "@/components";
 
 interface ProductPageProps {
   params: {
@@ -15,9 +16,12 @@ interface ProductPageProps {
   };
 }
 
+
 async function ProductPage({ params }: ProductPageProps) {
+
   const { id } = params;
   const product = await client.get(`${PRODUCTS}/${id}`);
+
   
   return (
     <div className="container-detail">
@@ -49,7 +53,7 @@ async function ProductPage({ params }: ProductPageProps) {
           <Counter />
 
           <section className="container-button-add-cart">
-          <Button className="button-add-cart">🛒 +Add to cart</Button>
+          <AddToCartButton product={product} />
           </section>
 
           <Box >
