@@ -1,5 +1,10 @@
 .navbar {
-  background: #fff;
+  background: linear-gradient(
+    90deg,
+    #9845e8 -1.72%,
+    #33d2ff 54.05%,
+    #e14756 99.78%
+  );
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -11,7 +16,6 @@
 
 .home-icon a {
   text-decoration: none;
-  color: #56b280;
 }
 
 .links ul {
