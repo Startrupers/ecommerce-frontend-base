@@ -18,9 +18,9 @@ export default function Home() {
       </Box>
 
       <Box className="home-products-section">
-        <Typography className="title-products">Products</Typography>
+        <Typography className="title-products">Product</Typography>
         <Typography className="text-products">
-          Order it for you or for your beloved ones
+          Order it for you or for your beloved ones.
         </Typography>
         <Products />
       </Box>
