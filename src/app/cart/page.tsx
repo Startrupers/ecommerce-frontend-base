@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import Link from "next/link";
 import Image from "next/image";
 import "./page.css";
@@ -61,7 +61,8 @@ function CartPage() {
       <Box>
         <h1 className="title">Your cart items</h1>
         <p className="subtitle">
-          You have {products.length} items in your cart
+          You have {products.length} items in your cart 
+          <Button className="shipping-button" href="/shipping">🛒</Button>
         </p>
 
         <div>{products.map(renderProductCard)}</div>
@@ -69,6 +70,8 @@ function CartPage() {
         <Link href="/" className="subtitle">
           Back to shopping
         </Link>
+
+        <div className="conteiner-button-checkout"><Button className="checkout-button" href="/shipping">Check-out</Button></div>
       </Box>
     </div>
   );

@@ -1,7 +1,7 @@
 .container-cart-detail {
   display: flex;
   flex-direction: column;
-  padding: 7rem 14rem 0 11rem;
+  padding: 5rem 14rem 0 11rem;
   gap: 2rem;
   width: 100%;
   align-items: center;
@@ -9,7 +9,7 @@
 
 
 .title {
-  padding-top: 2em;
+  padding: 2rem 14rem 0 11rem;
   text-align: center;
   font-size: 2em;
 }
@@ -20,7 +20,21 @@
   display: flex;
   justify-content: center;
   font-size: 0.9em;
-  padding-top: 2em;
+  padding: 3rem 14rem 0 11rem;
+
+  .shipping-button {
+    width: 90px;
+    height: 25px;
+    background-color: darkslateblue;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 7rem;
+    
+    &:hover {
+      background-color: black;
+    }
+  }
+  
 }
 
 .price-cart-detail {
@@ -53,5 +67,29 @@
     &:hover {
       background-color: black;
     }
+  }
+}
+
+.conteiner-button-checkout {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 14rem 0 11rem;
+  
+}
+
+.checkout-button {
+  color: darkslateblue;
+  width: 250px;
+  height: 40px;
+  background-color: #56b280;
+  border-radius: 7px;
+  font-size: 1.1em;
+  cursor: pointer;
+  text-transform: none;
+
+  &:hover {
+    background-color: black;
   }
 }

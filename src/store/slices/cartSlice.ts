@@ -10,6 +10,7 @@ interface CartProduct {
 
 const initialState = {
   products: [] as CartProduct[],
+  shippingAddress: {} as { fullName: string; address: string; city: string; postalCode: string; country: string },
 };
 
 const cartSlice = createSlice({
@@ -23,8 +24,12 @@ const cartSlice = createSlice({
     remove: (state, action: PayloadAction<string>) => {
       state.products = state.products.filter((product) => product.id !== action.payload);
     },
+
+    saveShippingAddress: (state, action: PayloadAction<{ fullName: string; address: string; city: string; postalCode: string; country: string }>) => {
+      state.shippingAddress = action.payload;
+    },
   },
 });
 
-export const { add, remove } = cartSlice.actions;
+export const { add, remove, saveShippingAddress } = cartSlice.actions;
 export default cartSlice.reducer;
