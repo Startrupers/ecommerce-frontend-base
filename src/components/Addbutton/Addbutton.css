@@ -1,0 +1,14 @@
+.button-add-cart {
+    color: darkslateblue;
+    width: 250px;
+    height: 40px;
+    background-color: #56b280;
+    border-radius: 7px;
+    font-size: 1.1em;
+    border-color: darkslateblue;
+    cursor: pointer;
+    
+    &:hover {
+      background-color: black;
+    }
+  }
