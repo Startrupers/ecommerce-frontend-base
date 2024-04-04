@@ -1,23 +1,24 @@
 "use client";
 
-import CheckoutWizard from "@/components/CheckoutWizard/Checkoutwizard";
+import "./page.css";
 import { RootState } from "@/store";
 import { saveShippingAddress } from "@/store/slices";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import "./page.css";
+import { Button } from "@mui/material";
+import { CheckoutWizard } from "@/components/CheckoutWizard";
 
-export default function ShippingAdress() {
+export default function CheckoutPage() {
   const {
     handleSubmit,
     register,
     formState: { errors },
-    setValue,
   } = useForm();
   const router = useRouter();
   const dispatch = useDispatch();
   const { shippingAddress } = useSelector((state: RootState) => state.cart);
+  console.log("🚀 ~ ShippingAdress ~ shippingAddress:", shippingAddress);
 
   const submitHandler = ({
     fullName,
@@ -51,7 +52,7 @@ export default function ShippingAdress() {
             id="fullName"
             {...register("fullName", { required: "Full Name is required" })}
           />
-          {errors.fullName && <>{errors.fullName.message}</>} 
+          {errors.fullName && <>{errors.fullName.message}</>}
         </div>
         <div className="label">
           <label htmlFor="address">Address</label>
@@ -100,9 +101,9 @@ export default function ShippingAdress() {
           {errors.country && <>{errors.country.message}</>}
         </div>
         <div className="container-button">
-          <button className="button" type="submit">
+          <Button className="button" type="submit">
             Continue
-          </button>
+          </Button>
         </div>
       </form>
     </div>

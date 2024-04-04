@@ -26,7 +26,6 @@ export default function Home() {
         <Products />
       </Box>
 
-      
       <Box className="products-detail-section">
         <div className="content-detail-section">
           <div>
@@ -102,7 +101,7 @@ export default function Home() {
 
               <div className="stars">⭐️⭐️⭐️⭐️</div>
               <Typography className="testimonial">
-                “Looks very natural, the smell is awesome”         
+                “Looks very natural, the smell is awesome”
               </Typography>
               <Typography className="autor">Norberto</Typography>
             </div>
@@ -132,11 +131,11 @@ export default function Home() {
         <div>
           <Typography className="title-testimonials">Popular</Typography>
           <Typography className="text-testimonials">
-          Our top selling product that you may like
+            Our top selling product that you may like
           </Typography>
         </div>
         <Popular />
-        </Box>
+      </Box>
     </main>
   );
 }

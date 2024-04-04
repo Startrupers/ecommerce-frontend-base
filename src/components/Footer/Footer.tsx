@@ -1,21 +1,18 @@
-import { ReactElement } from "react";
 import "./Footer.css";
 import { Box } from "@mui/material";
 import Link from "next/link";
+import routes from "@/config/routes";
 
-export const Footer = (): ReactElement => {
+export const Footer = () => {
   return (
     <div className="footer-container">
-      
       <Box className="footer-logo">
-      <Link href="/" >
-        Candleaf®
-      </Link>
+        <Link href={routes.home}>Candleaf®</Link>
       </Box>
 
       <section className="features">
-      <Box >
-          <Link href="/about" className="header">
+        <Box>
+          <Link href={routes.about} className="header">
             Discovery
           </Link>
           <ul>
@@ -25,8 +22,8 @@ export const Footer = (): ReactElement => {
           </ul>
         </Box>
 
-        <Box >
-          <Link href="/about" className="header">
+        <Box>
+          <Link href={routes.about} className="header">
             Info
           </Link>
           <ul>
@@ -36,8 +33,8 @@ export const Footer = (): ReactElement => {
           </ul>
         </Box>
 
-        <Box >
-          <Link href="/about" className="header">
+        <Box>
+          <Link href={routes.about} className="header">
             About
           </Link>
           <ul>
@@ -46,9 +43,7 @@ export const Footer = (): ReactElement => {
             <li>Affiliate</li>
           </ul>
         </Box>
-     
       </section>
-      
     </div>
   );
 };

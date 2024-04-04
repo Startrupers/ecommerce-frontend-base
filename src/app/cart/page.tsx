@@ -1,12 +1,13 @@
-"use client"
+"use client";
 
+import "./page.css";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Box, Button, Typography } from "@mui/material";
 import Link from "next/link";
 import Image from "next/image";
-import "./page.css";
-import { remove } from "@/store/slices/cartSlice"; 
+import { remove } from "@/store/slices/cartSlice";
+import routes from "@/config/routes";
 
 interface Product {
   id: string;
@@ -18,7 +19,6 @@ interface Product {
 
 function CartPage() {
   const products: Product[] = useSelector((state: any) => state.cart.products);
- 
   const dispatch = useDispatch();
 
   const removeToCart = (id: string) => {
@@ -45,11 +45,17 @@ function CartPage() {
       <section>
         <Box>
           <Typography className="title-detail">{product.title}</Typography>
-          <Typography className="price-cart-detail">${product.price}</Typography>
-          
+          <Typography className="price-cart-detail">
+            ${product.price}
+          </Typography>
 
           <section className="container-button-subtract-cart">
-            <button className="button-subtract-cart" onClick={() => removeToCart(product.id)}>🛒 - Remove from cart </button>
+            <Button
+              className="button-subtract-cart"
+              onClick={() => removeToCart(product.id)}
+            >
+              🛒 - Remove from cart
+            </Button>
           </section>
         </Box>
       </section>
@@ -61,17 +67,23 @@ function CartPage() {
       <Box>
         <h1 className="title">Your cart items</h1>
         <p className="subtitle">
-          You have {products.length} items in your cart 
-          <Button className="shipping-button" href="/shipping">🛒</Button>
+          You have {products.length} items in your cart
+          <Button className="shipping-button" href={routes.checkout}>
+            🛒
+          </Button>
         </p>
 
         <div>{products.map(renderProductCard)}</div>
 
-        <Link href="/" className="subtitle">
+        <Link href={routes.home} className="subtitle">
           Back to shopping
         </Link>
 
-        <div className="conteiner-button-checkout"><Button className="checkout-button" href="/shipping">Check-out</Button></div>
+        <div className="conteiner-button-checkout">
+          <Button className="checkout-button" href={routes.checkout}>
+            Check-out
+          </Button>
+        </div>
       </Box>
     </div>
   );

@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import client from "@/services/client";
 import { PRODUCTS } from "@/services/routes";
+import routes from "@/config/routes";
 
 interface Product {
   id: string;
@@ -17,7 +18,7 @@ interface Product {
 
 export const Popular = (): ReactElement => {
   const [data, setData] = useState<Product[]>([]);
-  const [loading, setLoading] = useState<boolean>(true); 
+  const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>("");
 
   const getProducts = useCallback(async () => {
@@ -42,7 +43,7 @@ export const Popular = (): ReactElement => {
   return (
     <section className="products-list__container">
       {data?.map(({ id, title, image, price }: Product) => (
-        <Link className="product-card" href={`${PRODUCTS}/${id}`} key={id}>
+        <Link className="product-card" href={routes.productDetail(id)} key={id}>
           <Image src={image} alt={title} width={100} height={100} />
           <h5 className="product-title">{title}</h5>
           <p className="product-price">${price}</p>

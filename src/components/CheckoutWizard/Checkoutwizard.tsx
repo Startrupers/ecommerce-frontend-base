@@ -1,6 +1,6 @@
 import "./CheckoutWizard.css";
 
-export default function CheckoutWizard({ activeStep = 0 }) {
+export function CheckoutWizard({ activeStep = 0 }) {
   return (
     <div className="container">
       {["User", "Shipping Address", "Payment Method", "Place Order"].map(

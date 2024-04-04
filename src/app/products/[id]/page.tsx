@@ -1,10 +1,9 @@
 import "./page.css";
 import Image from "next/image";
 import client from "@/services/client";
-import { Box, Typography, Button } from "@mui/material";
-import { Counter } from "@/components";
+import { Box, Typography } from "@mui/material";
+import { Counter, AddToCartButton } from "@/components";
 import { PRODUCTS } from "@/services/routes";
-import { AddToCartButton } from "@/components";
 
 interface ProductPageProps {
   params: {
@@ -16,18 +15,16 @@ interface ProductPageProps {
   };
 }
 
-
 async function ProductPage({ params }: ProductPageProps) {
-
   const { id } = params;
   const product = await client.get(`${PRODUCTS}/${id}`);
 
-  
   return (
     <div className="container-detail">
       <section>
         <Image
-          className="product-img-detail" key={id}
+          className="product-img-detail"
+          key={id}
           src={product.image}
           alt={product.title}
           width={90}
@@ -35,31 +32,27 @@ async function ProductPage({ params }: ProductPageProps) {
         />
 
         <Box className="quote">
-          <Typography >
+          <Typography>
             All hand-made with natural soy wax, Candleaf is made for your
             pleasure moments.
           </Typography>
           <Typography className="shipping">🍕 FREE SHIPPING</Typography>
         </Box>
       </section>
-       
+
       <section>
         <Box>
           <Typography className="title-detail">{product.title}</Typography>
-          <Typography className="price-detail">
-            ${product.price}
-          </Typography>
-          
+          <Typography className="price-detail">${product.price}</Typography>
+
           <Counter />
 
           <section className="container-button-add-cart">
-          <AddToCartButton product={product} />
+            <AddToCartButton product={product} />
           </section>
 
-          <Box >
-            <Typography className="detail">
-              {product.description}
-            </Typography>
+          <Box>
+            <Typography className="detail">{product.description}</Typography>
           </Box>
         </Box>
       </section>
