@@ -1,4 +1,5 @@
 import "./CheckoutWizard.css";
+import clsx from "clsx";
 
 export function CheckoutWizard({ activeStep = 0 }) {
   return (
@@ -7,9 +8,10 @@ export function CheckoutWizard({ activeStep = 0 }) {
         (step, index) => (
           <div
             key={step}
-            className={`activate 
-        ${index <= activeStep ? "step-on" : "step-off"} 
-        `}
+            className={clsx("activate", {
+              "step-on": index <= activeStep,
+              "step-off": index > activeStep,
+            })}
           >
             {step}
           </div>

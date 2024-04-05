@@ -8,9 +8,13 @@ import { BsPerson } from "react-icons/bs";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useSelector } from "react-redux";
 import routes from "@/config/routes";
+import { usePathname } from "next/navigation";
+import { navbarMainLinks, navbarSideLinks } from "@/config/links";
+import clsx from "clsx";
 
 export const Navbar = (): ReactElement => {
   const cartProducts = useSelector((state: any) => state.cart.products);
+  const pathname = usePathname();
 
   return (
     <nav className="navbar">
@@ -18,32 +22,37 @@ export const Navbar = (): ReactElement => {
         <Link href={routes.home}>Candleaf</Link>
       </Box>
 
-      <Box className="links">
-        <ul>
-          <li>
-            <Link href={routes.products}>Products</Link>
-          </li>
-          <li>
-            <Link href={routes.about}>About</Link>
-          </li>
-          <li>
-            <Link href={routes.contactus}>Contact us</Link>
-          </li>
-        </ul>
-      </Box>
+      {navbarMainLinks.map((link) => {
+        return (
+          <Link
+            key={link.name}
+            href={link.href}
+            className={clsx("link", pathname === link.href && "active")}
+          >
+            {link.name}
+          </Link>
+        );
+      })}
 
       <Box className="icons">
-        <Link href={routes.user}>
-          <SvgIcon>
-            <BsPerson />
-          </SvgIcon>
-        </Link>
-        <Link href={routes.cart}>
-          <Icon fontSize="medium">
-            <AiOutlineShoppingCart />
-          </Icon>
-          <span className="product-number"> {cartProducts.length} </span>
-        </Link>
+        {navbarSideLinks.map((link) => {
+          const LinkIcon = link.icon;
+
+          if (link.name === "Cart") {
+            return (
+              <Link key={link.name} href={link.href}>
+                <LinkIcon />
+                <span className="product-number"> {cartProducts.length} </span>
+              </Link>
+            );
+          }
+
+          return (
+            <Link key={link.name} href={link.href}>
+              <LinkIcon />
+            </Link>
+          );
+        })}
       </Box>
     </nav>
   );
