@@ -1,40 +1,58 @@
 "use client";
 
 import "./Navbar.css";
-import { ReactElement } from "react";
-import Link from "next/link";
-import { SvgIcon, Icon, Box } from "@mui/material";
-import { BsPerson } from "react-icons/bs";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { useState } from "react";
 import { useSelector } from "react-redux";
-import routes from "@/config/routes";
-import { usePathname } from "next/navigation";
-import { navbarMainLinks, navbarSideLinks } from "@/config/links";
+import { Box, Button } from "@mui/material";
+import Link from "next/link";
 import clsx from "clsx";
+import { usePathname } from "next/navigation";
 
-export const Navbar = (): ReactElement => {
+import routes from "@/config/routes";
+import { navbarMainLinks, navbarSideLinks } from "@/config/links";
+import { Sidebar } from "@components/ui";
+import { IoMenu } from "react-icons/io5";
+
+export const Navbar = () => {
   const cartProducts = useSelector((state: any) => state.cart.products);
   const pathname = usePathname();
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const openSidebar =
+    (isOpen: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
+      if (
+        event &&
+        event.type === "keydown" &&
+        ((event as React.KeyboardEvent).key === "Tab" ||
+          (event as React.KeyboardEvent).key === "Shift")
+      ) {
+        return;
+      }
+
+      setIsSidebarOpen(isOpen);
+    };
 
   return (
     <nav className="navbar">
-      <Box className="home-icon">
+      <Box>
         <Link href={routes.home}>Candleaf</Link>
       </Box>
 
-      {navbarMainLinks.map((link) => {
-        return (
-          <Link
-            key={link.name}
-            href={link.href}
-            className={clsx("link", pathname === link.href && "active")}
-          >
-            {link.name}
-          </Link>
-        );
-      })}
+      <Box className="navbar__sections">
+        {navbarMainLinks.map((link) => {
+          return (
+            <Link
+              key={link.name}
+              href={link.href}
+              className={clsx("link", pathname === link.href && "active")}
+            >
+              {link.name}
+            </Link>
+          );
+        })}
+      </Box>
 
-      <Box className="icons">
+      <Box className="navbar__icons">
         {navbarSideLinks.map((link) => {
           const LinkIcon = link.icon;
 
@@ -54,6 +72,12 @@ export const Navbar = (): ReactElement => {
           );
         })}
       </Box>
+
+      <Button className="navbar__menu--responsive" onClick={openSidebar(true)}>
+        <IoMenu size={24} />
+      </Button>
+
+      <Sidebar isOpen={isSidebarOpen} onOpen={openSidebar} />
     </nav>
   );
 };

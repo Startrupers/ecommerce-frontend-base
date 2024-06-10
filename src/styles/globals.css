@@ -1,10 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
 
-
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-mono:'Roboto', sans-serif; 
+  --font-mono: "Roboto", sans-serif;
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 255, 255, 255;
   --background-end-rgb: 255, 255, 255;

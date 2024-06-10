@@ -6,7 +6,7 @@ import { Popular, Products } from "@/components";
 export default function Home() {
   return (
     <main className="home">
-      <Box className="img-card">
+      <Box className="home__img-card">
         <Box className="card">
           <Typography className="title">E-commerce</Typography>
           <Typography className="text">
@@ -18,7 +18,7 @@ export default function Home() {
         </Box>
       </Box>
 
-      <Box className="home-products-section">
+      <Box className="home__products-section">
         <Typography className="title-products">Products</Typography>
         <Typography className="text-products">
           Order it for you or for your beloved ones
@@ -26,7 +26,7 @@ export default function Home() {
         <Products />
       </Box>
 
-      <Box className="products-detail-section">
+      <Box className="home__products-detail-section">
         <div className="content-detail-section">
           <div>
             <Typography className="title-products-detail">
@@ -37,18 +37,10 @@ export default function Home() {
               Order it for you or for your beloved ones
             </Typography>
 
-            <p className="p-products-detail">
-              ◎ Eco-sustainable:All recyclable materials, 0% CO2 emissions
-            </p>
-            <p className="p-products-detail">
-              ◎ Hyphoallergenic: 100% natural, human friendly ingredients
-            </p>
-            <p className="p-products-detail">
-              ◎ Handmade: All candles are craftly made with love.
-            </p>
-            <p className="p-products-detail">
-              ◎ Long burning: No more waste. Created for last long.
-            </p>
+            <p>◎ Eco-sustainable:All recyclable materials, 0% CO2 emissions</p>
+            <p>◎ Hyphoallergenic: 100% natural, human friendly ingredients</p>
+            <p>◎ Handmade: All candles are craftly made with love.</p>
+            <p>◎ Long burning: No more waste. Created for last long.</p>
             <Button className="btn-products-detail">Learn more</Button>
           </div>
 
@@ -62,7 +54,7 @@ export default function Home() {
         </div>
       </Box>
 
-      <Box className="testimonials-section">
+      <Box className="home__testimonials-section">
         <div>
           <Typography className="title-testimonials">Testimonials</Typography>
           <Typography className="text-testimonials">
@@ -127,7 +119,7 @@ export default function Home() {
         </div>
       </Box>
 
-      <Box className="popular-section">
+      <Box className="home__popular-section">
         <div>
           <Typography className="title-testimonials">Popular</Typography>
           <Typography className="text-testimonials">

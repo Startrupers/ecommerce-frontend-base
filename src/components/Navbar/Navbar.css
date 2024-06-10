@@ -13,23 +13,25 @@
   width: inherit;
   padding: 1rem 0;
 
-  .home-icon a {
-    text-decoration: none;
-  }
-
   .active {
     color: #de24a8;
   }
 
-  .link {
+  .navbar__sections {
     display: flex;
     gap: 5rem;
-    font-weight: 500;
-    font-size: large;
     align-items: center;
+
+    .link {
+      display: flex;
+      gap: 5rem;
+      font-weight: 500;
+      font-size: large;
+      align-items: center;
+    }
   }
 
-  .icons {
+  .navbar__icons {
     display: flex;
     gap: 1rem;
     align-items: center;
@@ -58,6 +60,30 @@
       border-radius: 50%;
       padding: 0px 5px;
       flex-shrink: 0;
+    }
+  }
+
+  .navbar__menu--responsive {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    gap: 1rem;
+    padding: 1rem 0;
+
+    .navbar__sections {
+      display: none;
+    }
+
+    .navbar__icons {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .navbar__menu--responsive {
+      display: flex;
     }
   }
 }
